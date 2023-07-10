@@ -1,0 +1,90 @@
+body
+    background-color: rgb(22, 22, 22)
+    // background-color: #1e4620
+
+
+
+*
+    color: aliceblue
+    box-sizing: border-box
+    text-decoration: none
+    font-family: 'Roboto Condensed', sans-serif
+
+
+
+.siteheader
+    height: 80px
+    // border: blue 1px solid
+    margin-bottom: 50px
+    display: flex
+    flex-wrap: nowrap
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+
+    .menulink
+        margin: 10px
+
+    .language
+        display: flex
+        // border: red 1px solid
+        flex-wrap: nowrap
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+
+
+
+.project-container
+    overflow: hidden
+
+    .project-card:nth-child(even)
+        // border: red 1px solid
+        margin-left: 4%
+
+
+    .project-card
+
+        overflow: hidden
+        // border: grey 1px solid
+        // margin: 1%
+        // padding: 5px
+        display: inline-block
+        flow: left
+        width: 48%
+        margin-bottom: 20px
+        position: relative
+        border-radius: 10px
+
+        img
+            // border: 3px solid red
+            transition: all 400ms ease-in-out
+            transition: transform 4s ease-in-out
+
+
+            filter: grayscale(1)
+            transform: scale(1.1)
+           
+            &:hover
+                filter: grayscale(0)
+                transform: scale(1.3)
+        &:hover .overlay
+            opacity: 1
+
+
+        .overlay
+            transition: all 400ms ease-in-out
+            position: absolute
+            top: 50%
+            left: 0
+            right: 0
+            font-weight: 700
+            font-size: 16pt
+            
+            opacity: 0.4
+            transform: translate(0, -50%)
+            pointer-events: none
+            // border: red 2px solid
+            text-align: center
+
+
