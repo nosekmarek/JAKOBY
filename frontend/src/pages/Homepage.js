@@ -1,6 +1,7 @@
 import React from 'react'
 import useFetch from '../hooks/useFetch'
 import {Link} from 'react-router-dom'
+import About from '../components/About'
 
 export default function Homepage() {
     const {loading, error, data} = useFetch(process.env.REACT_APP_URL_ALL_PROJECTS)
@@ -12,32 +13,37 @@ export default function Homepage() {
         return <p>Error :
         </p>
     }
+    const randomlysortedprojects = data.data.sort(() => Math.random() - 0.5)
 
     return (
+        <>
+       <About/>
+       
         <div className='project-container'>
-            {data
-                .data
-                .map(project => (
-                    <div key={project.id} className='project-card'>
-                        <Link key={project.id} to={`/project/${project.id}`} >
+            {randomlysortedprojects.map(project => (
+                        <Link key={project.id} to={`/project/${project.id}`} className='project-card'>
                             <>
+                            <div className='imageContainer'>
                             {/* <img src={`http://localhost:1337`+ project.attributes.cover_image.data.attributes.formats.thumbnail.url }/> */}
                             {/* <img src={`http://localhost:1337`+ project.attributes.cover_image.data.attributes.formats.small.url }/> */}
-                            <img src={`http://localhost:1337`+ project.attributes.cover_image.data.attributes.formats.medium.url }/>
+                            <img className='projectImage' src={process.env.REACT_APP_URL_BACKEND_API + project.attributes.cover_image.data.attributes.formats.medium.url }/></div>
                             {/* <img src={`http://localhost:1337`+ project.attributes.cover_image.data.attributes.formats.large.url }/>
                             <img src={`http://localhost:1337`+ project.attributes.cover_image.data.attributes.url }/> */}
 
-
-                            <div className='title overlay'>{project.attributes.title}</div>
-                            {/* <div className='subtitle'>{project.attributes.subtitle}</div>
+                            <div className='descriptionContainer'>
+                            <div className='title'>{project.attributes.title}</div>
+                            <div className='subtitle'>{project.attributes.subtitle}</div>
                             <div className='stage'>{project.attributes.stage}</div>
                             <div className='team'>{project.attributes.team}</div>
-                            <div className='decsription'>{project.attributes.decsription}</div> */}
+                            <div className='decsription'>{project.attributes.decsription}</div>
+                            </div>
                         </>
                     </Link>
-                </div>
+              
                 ))} 
         </div>
+        <div className='fakebox'></div>
+        </>
 
     )
 } 

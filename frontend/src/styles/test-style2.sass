@@ -1,0 +1,162 @@
+html,
+body
+    background-color: rgb(22, 22, 22)
+    height: 100%
+    width: 100%
+    margin: 0
+    padding: 0
+    left: 0
+    top: 0
+    font-size: 100%
+
+*
+    color: aliceblue
+    box-sizing: border-box
+    text-decoration: none
+    font-family: 'Roboto Condensed', sans-serif
+
+
+.container        
+    // border: blue 1px solid
+    display: flex
+    flex-wrap: nowrap
+    flex-direction: row
+    justify-content: space-between
+    align-items: stretch 
+    width: 100vw
+    height: 100vh
+
+
+
+.siteheader
+    width: 10%
+    height: 100vh
+            // border: blue 1px solid
+    margin-bottom: 50px
+    flex-grow: 1
+    display: flex
+    flex-wrap: nowrap
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    border-right: dashed 2px #303030 
+
+    .menu
+        display: flex
+        flex-wrap: nowrap
+        flex-direction: column
+        justify-content: space-between
+        align-items: center
+    .menulink
+        margin: 10px
+
+    .language
+        display: flex
+        // border: red 1px solid
+        flex-wrap: nowrap
+        flex-direction: column
+        justify-content: space-between
+        align-items: center
+
+
+.about
+    width: 30%
+    height: 100vh
+    flex-grow: 3
+    
+.project-container
+    flex-grow: 5
+    overflow-x: hidden
+    overflow-y: scroll
+    // border-left: dashed 1px #303030
+    // border-right: dashed 1px #303030 
+    // border:  dashed 1px #303030 
+
+.fakebox
+    flex-grow: 1
+    width: 100px
+
+    
+    
+
+
+::-webkit-scrollbar 
+    width: 0  /* Remove scrollbar space */
+    background: transparent  /* Optional: just make scrollbar invisible */
+
+
+.project-card
+    // border: 1px yellow solid
+    display: flex
+    border:  dashed 2px #303030 
+    border-top: none    
+
+
+
+    &:nth-child(odd) .imageContainer
+        order: 2
+
+    &:nth-child(odd) .descriptionContainer
+        order: 1
+
+.imageContainer
+    width: 50%
+    height: 500px
+    // border: blue 2px solid
+    overflow: hidden
+    position: relative
+    order: 1
+
+
+    .projectImage
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+
+.descriptionContainer
+    width: 50%
+    // border: red 2px solid
+    overflow: hidden
+    order: 2
+    padding: 25px
+    position: relative
+
+.title
+    font-weight: 700
+    font-size: 2em
+
+.subtitle
+    font-weight: 300
+    
+
+.stage
+    position: absolute
+    left:0
+    bottom: 0
+    font-weight: 300
+    font-size: 0.6em
+    margin: 25px
+
+                            // <div className='descriptionContainer'>
+                            // <div className='title'>{project.attributes.title}</div>
+                            // <div className='subtitle'>{project.attributes.subtitle}</div>
+                            // <div className='stage'>{project.attributes.stage}</div>
+                            // <div className='team'>{project.attributes.team}</div>
+                            // <div className='decsription'>{project.attributes.decsription}</div>
+
+
+
+
+.about 
+    // border: red 3px solid
+    padding: 25px
+    display: flex
+    justify-content: center
+    flex-direction: column
+    font-weight: 300
+    font-size: 2em
+    padding-right: 100px
+
+
+    .aboutContainer
