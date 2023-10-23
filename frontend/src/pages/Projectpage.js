@@ -12,14 +12,18 @@ export default function Projectpage() {
         return <p>Error :</p>
 
     return (
-        <div className='projectWrapper'>
-            <img
-                src={process.env.REACT_APP_URL_BACKEND_API + data.data.attributes.cover_image.data.attributes.url}/>
-            <div className='title'>{data.data.attributes.title}</div>
+        <div className='project-container projectPage'>
+            <img className='imageTop' src={process.env.REACT_APP_URL_BACKEND_API + data.data.attributes.cover_image.data.attributes.url }/>
+            <br/>
+            <div className={`title projectLink ${data.data.attributes.subtitle}`}>{data.data.attributes.title}</div>
             <div className='subtitle'>{data.data.attributes.subtitle}</div>
             <div className='stage'>{data.data.attributes.stage}</div>
             <div className='team'>{data.data.attributes.team}</div>
-            <div className='description'>{data.data.attributes.description}</div >
+            <div className='description'>{data.data.attributes.description}</div>
+            <div className='fakeextention'></div>
         </div>
     )
 }
+
+
+

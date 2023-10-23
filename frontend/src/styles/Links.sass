@@ -1,0 +1,82 @@
+$GREY :#A0A0A0
+$BROWN :#998679
+$OLIVE :#A4BC7E
+$GREEN :#7BA084
+$YELLOW :#F2D678
+$ORANGE :#F2B48A
+$RED :#DD8079
+$PINK :#D49BB3
+$PURPLE :#9290B7
+$BLUE :#7CAEC3
+$MINT :#8CCFCF
+$TEAL :#75AFA8
+
+ 
+ 
+.projectLink::before
+    content: "" 
+    position: absolute 
+    left: 2% 
+    bottom: -0px 
+    width: 94%
+    height: 14px 
+    transform: skew(-45deg) 
+    z-index: -10
+    overflow: visible
+    animation: underlineAppear 1s
+
+    
+@keyframes underlineAppear 
+    0%       
+        width: 4%
+    100%     
+        width: 94%  
+
+
+
+// COLORS SELECTION BASED ON PROJECTS CLASS 
+.School::before 
+    background: $RED
+.Monument::before 
+    background: $BLUE
+.Kindergarten::before 
+    background: $YELLOW
+
+
+
+
+
+.basicLink
+    position: relative
+
+.basicLink::before
+    content: "" 
+    position: absolute 
+    left: -50% 
+    bottom: -0px 
+    width: 0%
+    height: 14px 
+    transform: skew(-45deg) 
+    z-index: -10
+    overflow: visible
+    transition: .5s ease-in-out
+
+
+
+.basicLink:hover
+    font-weight: 700
+    transition: .5s ease-in-out
+
+.basicLink:hover::before
+    width: 130%
+
+
+
+
+// COLORS SELECTION BASED ON MENU
+.basicLink.projectsLink::before 
+    background: $YELLOW
+.basicLink.aboutLink::before 
+    background: $BLUE
+.basicLink.contactLink::before 
+    background: $GREEN
